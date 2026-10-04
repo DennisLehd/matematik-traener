@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Matematik-træner</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">∑</div>
+
+      <div>
+        <h1>Matematik-træner</h1>
+        <p>Regn på papir – og brug programmet til at lave opgaver.</p>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="container">
+
+    <!-- STARTSKÆRM -->
+
+    <section id="setupScreen">
+
+      <div class="intro">
+        <h2>Hvad vil du træne?</h2>
+        <p>
+          Vælg et område og derefter den type opgaver,
+          du vil arbejde med.
+        </p>
+      </div>
+
+
+      <div id="moduleGrid" class="module-grid"></div>
+
+
+      <section id="optionsPanel" class="panel hidden">
+
+        <div class="panel-heading">
+          <div>
+            <div class="eyebrow">Valgt område</div>
+            <h2 id="selectedModuleTitle"></h2>
+          </div>
+
+          <button
+            id="changeModuleButton"
+            class="button button-light"
+            type="button"
+          >
+            Skift område
+          </button>
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="exerciseType">
+              Opgavetype
+            </label>
+
+            <select id="exerciseType"></select>
+          </div>
+
+
+          <div class="field">
+            <label for="difficulty">
+              Sværhedsgrad
+            </label>
+
+            <select id="difficulty">
+              <option value="easy">Let</option>
+              <option value="medium" selected>Mellem</option>
+              <option value="hard">Svær</option>
+            </select>
+          </div>
+
+
+          <div class="field">
+            <label for="questionCount">
+              Antal opgaver
+            </label>
+
+            <select id="questionCount">
+              <option value="5">5 opgaver</option>
+              <option value="10" selected>10 opgaver</option>
+              <option value="20">20 opgaver</option>
+              <option value="30">30 opgaver</option>
+            </select>
+          </div>
+
+        </div>
+
+
+        <button
+          id="startButton"
+          class="button button-primary button-large"
+          type="button"
+        >
+          Start træning
+        </button>
+
+      </section>
+
+    </section>
+
+
+    <!-- TRÆNINGSSKÆRM -->
+
+    <section id="trainingScreen" class="hidden">
+
+      <div class="training-toolbar">
+
+        <div>
+          <div id="trainingModule" class="eyebrow"></div>
+          <div id="progressText" class="progress-text"></div>
+        </div>
+
+        <button
+          id="quitButton"
+          class="button button-light"
+          type="button"
+        >
+          Afslut
+        </button>
+
+      </div>
+
+
+      <div class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+
+
+      <section class="exercise-card">
+
+        <div id="exerciseTitle" class="exercise-title"></div>
+
+        <div id="problem" class="problem"></div>
+
+        <div id="instruction" class="instruction"></div>
+
+
+        <div class="exercise-buttons">
+
+          <button
+            id="answerButton"
+            class="button button-secondary"
+            type="button"
+          >
+            Vis facit
+          </button>
+
+          <button
+            id="nextButton"
+            class="button button-primary"
+            type="button"
+          >
+            Næste opgave
+          </button>
+
+        </div>
+
+
+        <div id="answerBox" class="answer-box hidden"></div>
+
+      </section>
+
+    </section>
+
+
+    <!-- SLUTSKÆRM -->
+
+    <section id="finishedScreen" class="hidden">
+
+      <div class="finished-card">
+
+        <div class="finished-icon">✓</div>
+
+        <h2>Træningen er færdig</h2>
+
+        <p id="finishedText"></p>
+
+        <div class="finished-buttons">
+
+          <button
+            id="repeatButton"
+            class="button button-primary"
+            type="button"
+          >
+            Tag samme træning igen
+          </button>
+
+          <button
+            id="homeButton"
+            class="button button-light"
+            type="button"
+          >
+            Til forsiden
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    Matematik-træner
+  </footer>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
